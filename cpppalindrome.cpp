@@ -4,7 +4,6 @@
 #include <cctype>
 using namespace std;
 
-//still need to add different case checking
 int main(){ 
   char phrase[80]; //initiated cstring to get input
   char modphrase[80]; //initiated modified cstring to only accept valid chars
@@ -15,8 +14,11 @@ int main(){
   cin.get();
   //gets phrase
   for(int i = 0;i < 80; i++){
-    if( (int(phrase[i]) >= 65 && int(phrase[i]) <= 95) || (int(phrase[i]) >= 97 && int(phrase[i]) <= 122)){
+    if((int(phrase[i]) >= 65 && int(phrase[i]) <= 95) || (int(phrase[i]) >= 97 && int(phrase[i]) <= 122)){
       //is the phrase a valid character? if so, add it to modphrase
+      if(int(phrase[i]) >= 65 && int(phrase[i]) <= 95){
+	phrase[i] += 32; //if the letter is uppercase, change it to lower case
+      }
       modphrase[count] = phrase[i];
       count++;
     }
