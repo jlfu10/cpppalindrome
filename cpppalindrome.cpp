@@ -13,7 +13,7 @@ int main(){
   cin.get(phrase, 80, '\n');
   cin.get();
   for(int i = 0;i < 80; i++){
-    if((int(phrase[i]) >= 65 && int(phrase[i]) <= 95)||(int(phrase[i]) >= 97 && int(phrase[i]) <= 122)){
+    if( (int(phrase[i]) >= 65 && int(phrase[i]) <= 95) || (int(phrase[i]) >= 97 && int(phrase[i]) <= 122)){
       modphrase[count] = phrase[i];
       count++;
     }
