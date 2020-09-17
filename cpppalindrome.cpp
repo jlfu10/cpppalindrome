@@ -5,7 +5,7 @@ using namespace std;
 
 int main() {
     char phrase[80]; //initiated cstring to get input
-    char modphrase[80]; //initiated modified cstring to only accept valid chars
+    char modphrase[81]; //initiated modified cstring to only accept valid chars
     bool palindrome = true; //is the phrase a palindrome
     int count = 0; //for adding to modphrase
     cout << "enter a phrase: " << endl;
@@ -22,11 +22,14 @@ int main() {
             count++;
         }
     }
+    modphrase[count] = '\0';
     //loop through modphrase fowards and backwards and compare
     for (int i = 0; i < count; i++) {
+      if (modphrase[count] != '\0'){
         if (modphrase[i] != modphrase[count - i - 1]) {
             palindrome = false; //if at any point characters are different, it is not a palindrome
         }
+      }
     }
     //tell the user
     if (palindrome) {
